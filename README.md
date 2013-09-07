@@ -5,7 +5,7 @@ It is the basis to deliver question to the answers we have. It serves as a multi
 
 
 Copyright (c) 2013. Manuel Klarmann. (mklarmann@gmail.com).
-All rights reserved.  See the LICENSE file for BSD-style license.
+All rights reserved.  See the LICENSE file for license.
 
 
 
