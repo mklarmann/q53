@@ -16,16 +16,16 @@ All rights reserved.  See the LICENSE file for license.
 Begin: challenge
 
 Iterate through:
-action <-> reaction
-e.g. question (Q) <-> answer (A)
+	action <-> reaction
+	e.g. question (Q) <-> answer (A)
 
 End: satisfaction
 
 
 Hence we initialize the program with the following set of answer and question:
 
-"Are you seeking for answers?" - ["yes","no"]
-"Are you satisfied?" - ["yes","no"]
+	"Are you seeking for answers?" - ["yes","no"]
+	"Are you satisfied?" - ["yes","no"]
 
 
 ------------
@@ -34,13 +34,13 @@ Hence we initialize the program with the following set of answer and question:
 
 Think of a person - guess your family version
 
-Question 1: The gender of the person is male?
-Question 2: The person is 20 years older than you?
+	Question 1: The gender of the person is male?
+	Question 2: The person is 20 years older than you?
 
-Question 3: Is it your Dad?
-Question 4: Is it your Mum?
-Question 5: Is it your brother?
-Question 6: Is it your sister?
+	Question 3: Is it your Dad?
+	Question 4: Is it your Mum?
+	Question 5: Is it your brother?
+	Question 6: Is it your sister?
 
 Each question can be answered by ["yes","maybe","no"] the answer is A1 to A6 correspondingly.
 
@@ -49,10 +49,10 @@ Each question is valued by the answer to another question by probabilites
 If the answer to Q3 is yes, and the person is sastified then:
 
 Q1 has the following values for
-yes= 0.9	maybe=	0.05	no=	0.05
+	yes= 0.9	maybe=	0.05	no=	0.05
 
 Q2 has the following values for
-yes= 0.8	maybe=	0.05	no=	0.15
+	yes= 0.8	maybe=	0.05	no=	0.15
 
 
 Each answer is further filtered through the truth-matrix:
@@ -72,16 +72,16 @@ Each answer is further filtered through the truth-matrix:
 
 -> Find the best question Q_alpha:
 
-Q_alpha = max_i(sum_Q(Information_{qi}(Q(A)))
+	Q_alpha = max_i(sum_Q(Information_{qi}(Q(A)))
 
-I_{q1}(Q1) = I_{q1}(E_{q1})
-I_{q1}(Q3) = I(Q2 and Q3) + I_{q3}(E_{q3})
+	I_{q1}(Q1) = I_{q1}(E_{q1})
+	I_{q1}(Q3) = I(Q2 and Q3) + I_{q3}(E_{q3})
 
 -> Receive the answer A_alpha:
 
-By A_alpha Q_alpha becomes the least interesting question.
-I_{q_alpha}(A_alpha) = I_{q_alpha}(Q_alpha)
-Truth-Of(A_alpha) ist not A_alpha
+	By A_alpha Q_alpha becomes the least interesting question.
+	I_{q_alpha}(A_alpha) = I_{q_alpha}(Q_alpha)
+	Truth-Of(A_alpha) ist not A_alpha
 
 
 For each presented question there is an probability estimate p > 0.5 of the question being answered positive.
