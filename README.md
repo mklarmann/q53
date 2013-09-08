@@ -16,8 +16,10 @@ All rights reserved.  See the LICENSE file for license.
 Begin: challenge
 
 Iterate through:
+
 	action <-> reaction
-	e.g. question (Q) <-> answer (A)
+	e.g.:
+	question (Q) <-> answer (A)
 
 End: satisfaction
 
@@ -26,7 +28,7 @@ Hence we initialize the program with the following set of answer and question:
 
 	"Are you seeking for answers?" - ["yes","no"]
 	"Are you satisfied?" - ["yes","no"]
-	
+
 
 ------------
 ### Theory
@@ -56,10 +58,12 @@ Each question is valued by the answer to another question by probabilites
 If the answer to Q3 is yes, and the person is sastified then:
 
 Q1 has the following values for
-	yes= 0.9	maybe=	0.05	no=	0.05
+
+	yes = 0.9	maybe =	0.05	no = 0.05
 
 Q2 has the following values for
-	yes= 0.8	maybe=	0.05	no=	0.15
+
+	yes = 0.8	maybe =	0.05	no = 0.15
 
 
 Each answer is further filtered through the truth-matrix:
@@ -145,8 +149,9 @@ It can be used to assess the next question to be asked also by the cost it takes
 ### Modules
 
 
-Language: First question is what language should I address you?
-Maps: Where do you life, place a pin
-Databases: Market of jobs, people, wikipedia, co2 values
-Display: Display information alongside the next question (hence have more elaborate questions)
-Transfer: Allow for p2p distribution of the knowledge database
+- Language: First question is what language should I address you?
+- Maps: Where do you life, place a pin
+- Databases: Market of jobs, people, wikipedia, co2 values
+- Display: Display information alongside the next question (hence have more elaborate questions)
+- Transfer: Allow for p2p distribution of the knowledge database
+
