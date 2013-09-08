@@ -79,9 +79,9 @@ Each answer is further filtered through the truth-matrix:
 
 -> Receive the answer A_alpha:
 
-	By A_alpha Q_alpha becomes the least interesting question.
-	I_{q_alpha}(A_alpha) = I_{q_alpha}(Q_alpha)
-	Truth-Of(A_alpha) ist not A_alpha
+			By A_alpha Q_alpha becomes the least interesting question.
+			I_{q_alpha}(A_alpha) = I_{q_alpha}(Q_alpha)
+			Truth-Of(A_alpha) ist not A_alpha
 
 
 For each presented question there is an probability estimate p > 0.5 of the question being answered positive.

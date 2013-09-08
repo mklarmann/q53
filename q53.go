@@ -16,14 +16,14 @@ import (
 
 type Answers struct {
 	Phrases  []string
-	Probabilities []float64
-	Transitions []float64
-	Votes [2]int // first for Probabilities, seccond for Transitions
+	Transitions [][]float64 // this is the matrix, while the diagonal are the probabilites is seperate from the rest
+	Votes [2]int // first for probabilities, seccond for transitions
 }
+
 
 type Question struct {
 	Phrase  string
-	Responses Answers
+	Choise Answers
 	
 	
 	Account string
@@ -39,8 +39,7 @@ var (
 		Phrase:  "Are you seeking for answers?",
 		Responses: Answers{
 				Phrases: []string{"yes","no"},
-				Probabilities: []float64{0.5,0.5},
-				Transitions: []float64{0.5,0.5},
+				Transitions: [][]float64{0.5,0.5;0.5,0.5}, // ones(4)/2
 				Votes: [2]int{0,1},
 			},
 	}
@@ -49,21 +48,42 @@ var (
 		Phrase:  "Are you satisfied?",
 		Responses: Answers{
 				Phrases: []string{"yes","no"},
-				Probabilities: []float64{0.5,0.5},
-				Transitions: []float64{0.5,0.5},
+				Transitions: [][]float64{0.5,0.5;0.5,0.5}, // ones(4)/2
 				Votes: [2]int{0,1},
 			},
-
 	}
+	
+	knowledge = []Questions
 
 )
 
-func init() {
-	http.HandleFunc("/", root)
-	http.HandleFunc("/sign", sign)
+
+
+func eval (Question, SelectionResponse int){
+	
+	
+	// delay.train() call
 }
 
-func root(w http.ResponseWriter, r *http.Request) {
+
+
+func train (){}
+func entropy (){}
+
+
+
+
+/*
+below is just the boilerplate code for webinteraction, do not mind
+*/
+
+
+func init() {
+	http.HandleFunc("/", reaction) 
+	http.HandleFunc("/action", sign)
+}
+
+func reaction(w http.ResponseWriter, r *http.Request) {
 	c := appengine.NewContext(r)
 
 
@@ -100,7 +120,7 @@ const guestbookTemplateHTML = `
 </html>
 `
 
-func sign(w http.ResponseWriter, r *http.Request) {
+func action(w http.ResponseWriter, r *http.Request) {
 	c := appengine.NewContext(r)
 	c.Infof("New entry from URL: %v", r.URL)
 	q := Question{
