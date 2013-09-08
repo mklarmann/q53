@@ -57,11 +57,11 @@ yes= 0.8	maybe=	0.05	no=	0.15
 
 Each answer is further filtered through the truth-matrix:
 
-Answer\Reality	|	yes		maybe	no
---------------------------------------
-yes				|	0.8		0.1		0.1	
-maybe			|	0.1		0.75	0.15
-no				|	0.05	0.1		0.85
+	Answer\Reality	|	yes		maybe	no
+	--------------------------------------
+	yes				|	0.8		0.1		0.1	
+	maybe			|	0.1		0.75	0.15
+	no				|	0.05	0.1		0.85
 
 
 
