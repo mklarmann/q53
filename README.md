@@ -26,6 +26,13 @@ Hence we initialize the program with the following set of answer and question:
 
 	"Are you seeking for answers?" - ["yes","no"]
 	"Are you satisfied?" - ["yes","no"]
+	
+
+------------
+### Theory
+
+We combine the principles of **information theory** (entropy), naive **Bayesian estimators** and the power of the **internet** for this tool.
+We look at the likelihoods of a positive outcome to the questions as a distribution, where we want to decrease entropy (maximize information). Hence we choose the next question that will exactly do so, by being answerd. After the answer we calculate with our Bayesian estimator the adjusted probabilities. 
 
 
 ------------
@@ -107,9 +114,8 @@ Each question is initialized with 1 vote for 0 knowledge of the other questions.
 That is, there is the weight of 1 for the case of 0.5 tranition probabilities in case there are 3 possible answers. Each answer has the probability 0 and no vote.
 With the first positive vote, this changes to accounting the transition probabilies half (as there is now one vote for transition and one for answer), and adding this 1 vote to one of the answers.
 
-To not learn only on the question with the most wisdom and comprehensiveness already, the algorithm chooses always the 2nd best question available.
-So Q_alpha becomes:
-Q_alpha = 1-below-max_i(sum_Q(Information_{qi}(Q(A)))
+To not learn only on the question with the most wisdom and comprehensiveness already, the algorithm has to choose between best question from the information maximization sense and maximizing his wisdom (best learning rate). This ration is still to be found. (TODO)
+
 
 Positive learning case:
 The next selected question has a LOWER p than on the one before AND the answer before was POSITIVE
