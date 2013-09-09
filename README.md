@@ -9,6 +9,58 @@ All rights reserved.  See the LICENSE file for license.
 
 
 
+
+------------
+### Install
+
+
+install go
+
+	download appengine sdk
+
+adjusted GOPATH:
+
+	export GOPATH=$HOME/go
+	export PATH=$PATH:$GOPATH/bin
+
+and added path/to/appengine to $PATH
+
+added app.yaml with the following content:
+
+	application: q53-xxxx # your appengine id
+	version: 1
+	runtime: go
+	api_version: go1
+	
+	handlers:
+	- url: /.*
+	  script: _go_app
+
+
+------------
+### Work
+
+
+test locally:
+
+	dev_appserver.py mklarmann/
+
+upload:
+
+	appcfg.py update mklarmann/
+
+format text:
+
+	gofmt -w mklarmann
+
+update old library version:
+
+	go tool fix mklarmann
+
+clear the datastore:
+
+	dev_appserver.py --clear_datastore mklarmann/
+
 ------------
 ### Basic
 
@@ -35,6 +87,10 @@ Hence we initialize the program with the following set of answer and question:
 
 We combine the principles of **information theory** (entropy), naive **Bayesian estimators** and the power of the **internet** for this tool.
 We look at the likelihoods of a positive outcome to the questions as a distribution, where we want to decrease entropy (maximize information). Hence we choose the next question that will exactly do so, by being answerd. After the answer we calculate with our Bayesian estimator the adjusted probabilities. 
+
+http://en.wikipedia.org/wiki/Conditional_entropy
+http://en.wikipedia.org/wiki/Mutual_information
+http://en.wikipedia.org/wiki/Bayesian_network
 
 
 ------------
