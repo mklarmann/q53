@@ -1,6 +1,6 @@
 ## Q53
 
-This is q53 - as in "the question to the answer of 53" in reference to douglas adams.
+This is q53 - as in "the question to the answer of 53" in reference to douglas adams number 42 : )
 It is the basis to deliver question to the answers we have. It serves as a multipurpose tool to any question we might have.
 
 
